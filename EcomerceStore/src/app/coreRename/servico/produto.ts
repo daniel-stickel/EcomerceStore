@@ -34,7 +34,7 @@ export class ProdutoService {
         imagem: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FRock_%2526_Roll_Racing&psig=AOvVaw3qfg73fDDGii4VKH3LllMZ&ust=1761657452747000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCICl0sq7xJADFQAAAAAdAAAAABAE",
         nome: "Rock in Roll Racing",
         console: "Super Nintendo",
-        descricao: "Rock N' Roll Racing é um jogo eletrônico de corrida e de combate de veículos que possui um estilo único para um jogo de 1993. Desenvolvido pela Blizzard Entertainment (que na época se chamava Silicon & Synapse) e publicado pela Interplay, o grande forte do jogo é a trilha sonora no estilo rock n' roll, o que adiciona mais emoção às corridas, ultrapassagens e principalmente a batidas "que acontecem em excesso no decorrer das fases". Outro destaque é o estilo batalha que acompanha as corridas com tiros e bombas voando para todos os lados. O game foi portado para o Game Boy Advance em 2003",
+        descricao: "Rock N' Roll Racing é um jogo eletrônico de corrida e de combate de veículos que possui um estilo único para um jogo de 1993. Desenvolvido pela Blizzard Entertainment (que na época se chamava Silicon & Synapse) e publicado pela Interplay, o grande forte do jogo é a trilha sonora no estilo rock n' roll, o que adiciona mais emoção às corridas, ultrapassagens e principalmente a batidas que acontecem em excesso no decorrer das fases. Outro destaque é o estilo batalha que acompanha as corridas com tiros e bombas voando para todos os lados. O game foi portado para o Game Boy Advance em 2003",
         preco: 49.90
     },
     {
@@ -44,7 +44,7 @@ export class ProdutoService {
         console: "Play Station",
         descricao: "Resident Evil, conhecido no Japão como Biohazard, é um jogo eletrônico de survival horror lançado originalmente para Playstation. É o primeiro título da série de jogos Resident Evil. O enredo segue Chris Redfield e Jill Valentine, membros de uma força-tarefa de elite conhecida como S.T.A.R.S., enquanto investigam os arredores da cidade de Raccoon City após o desaparecimento de seus membros de equipe. Eles logo ficam presos em uma mansão infestada por zumbis e outros monstros. O jogador, tendo escolhido jogar como Chris ou Jill no início do jogo, deve explorar a mansão para descobrir seus segredos e encontrar uma maneira de escapar.",
         preco: 69.90
-    }
+    },
     {
         id: 6,
         imagem: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpt.wikipedia.org%2Fwiki%2FTwisted_Metal&psig=AOvVaw1CglabTF-woDlT7p-8WWMq&ust=1761658014735000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCNDM_9y9xJADFQAAAAAdAAAAABAE",
@@ -58,7 +58,7 @@ export class ProdutoService {
   public getProducts(): Array<ProductType> {
     return this.products;
   }
-  public getprodutoId(id: number): any {
+  public getProdutoId(id: number): any {
     return this.products.find((item: ProductType) => item.id == id);
   }
 }
