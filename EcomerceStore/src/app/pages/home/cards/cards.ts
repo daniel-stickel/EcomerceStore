@@ -1,5 +1,5 @@
 import { Component, Input, } from '@angular/core';
-import { ProductType } from '../../../coreRename/servico/produto';
+import { ProdutoTipo } from '../../../core/servico/produto';
 import { RouterLink } from "@angular/router";
 
 @Component({
@@ -8,7 +8,11 @@ import { RouterLink } from "@angular/router";
   templateUrl: './cards.html',
   styleUrl: './cards.scss'
 })
-export class ProductCards {
+export class ProdutoCards {
 @Input()
-public produto!: ProductType;
+public produto!: ProdutoTipo;
 }
+
+
+
+
