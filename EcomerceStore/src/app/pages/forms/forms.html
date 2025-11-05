@@ -1,0 +1,162 @@
+<div class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl border border-retro-green font-retro">
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+
+    <fieldset class="mb-8">
+      <legend class="text-2xl font-bold text-retro-yellow mb-6 border-b-2 border-retro-green pb-2">
+        1. Dados Pessoais
+      </legend>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="md:col-span-2">
+          <label for="nome" class="block text-sm font-medium text-retro-white mb-2">Nome Completo</label>
+          <input id="nome" type="text" formControlName="nome" class="input-retro" 
+                 [ngClass]="{ 'input-error': nome?.invalid && nome?.touched }">
+          <div *ngIf="nome?.invalid && (nome?.dirty || nome?.touched)" class="error-message">
+            <span *ngIf="nome?.errors?.['required']">O nome é obrigatório.</span>
+          </div>
+        </div>
+
+        <div>
+          <label for="cpf" class="block text-sm font-medium text-retro-white mb-2">CPF (só números)</label>
+          <input id="cpf" type="text" formControlName="cpf" maxlength="11" class="input-retro" 
+                 [ngClass]="{ 'input-error': cpf?.invalid && cpf?.touched }">
+          <div *ngIf="cpf?.invalid && (cpf?.dirty || cpf?.touched)" class="error-message">
+            <span *ngIf="cpf?.errors?.['required']">O CPF é obrigatório.</span>
+            <span *ngIf="cpf?.errors?.['pattern']">CPF deve ter 11 números.</span>
+          </div>
+        </div>
+
+        <div>
+          <label for="dataNascimento" class="block text-sm font-medium text-retro-white mb-2">Data de Nascimento</label>
+          <input id="dataNascimento" type="date" formControlName="dataNascimento" class="input-retro" 
+                 [ngClass]="{ 'input-error': dataNascimento?.invalid && dataNascimento?.touched }">
+          <div *ngIf="dataNascimento?.invalid && (dataNascimento?.dirty || dataNascimento?.touched)" class="error-message">
+            <span *ngIf="dataNascimento?.errors?.['required']">A data é obrigatória.</span>
+          </div>
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-retro-white mb-2">E-mail</label>
+          <input id="email" type="email" formControlName="email" class="input-retro"
+                 [ngClass]="{ 'input-error': email?.invalid && email?.touched }">
+          <div *ngIf="email?.invalid && (email?.dirty || email?.touched)" class="error-message">
+            <span *ngIf="email?.errors?.['required']">O e-mail é obrigatório.</span>
+            <span *ngIf="email?.errors?.['email']">Formato de e-mail inválido.</span>
+          </div>
+        </div>
+
+        <div>
+          <label for="telefone" class="block text-sm font-medium text-retro-white mb-2">Celular (com DDD)</label>
+          <input id="telefone" type="tel" formControlName="telefone" maxlength="11" class="input-retro"
+                 [ngClass]="{ 'input-error': telefone?.invalid && telefone?.touched }">
+          <div *ngIf="telefone?.invalid && (telefone?.dirty || telefone?.touched)" class="error-message">
+            <span *ngIf="telefone?.errors?.['required']">O celular é obrigatório.</span>
+            <span *ngIf="telefone?.errors?.['pattern']">Deve ter 10 ou 11 números.</span>
+          </div>
+        </div>
+
+      </div>
+    </fieldset>
+
+    <fieldset class="mb-8">
+      <legend class="text-2xl font-bold text-retro-yellow mb-6 border-b-2 border-retro-green pb-2">
+        2. Endereço de Faturamento
+      </legend>
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="md:col-span-3">
+          <label for="endereco" class="block text-sm font-medium text-retro-white mb-2">Endereço (Rua)</label>
+          <input id="endereco" type="text" formControlName="endereco" class="input-retro"
+                 [ngClass]="{ 'input-error': endereco?.invalid && endereco?.touched }">
+          <div *ngIf="endereco?.invalid && (endereco?.dirty || endereco?.touched)" class="error-message">
+            <span *ngIf="endereco?.errors?.['required']">O endereço é obrigatório.</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-1">
+          <label for="numero" class="block text-sm font-medium text-retro-white mb-2">Número</label>
+          <input id="numero" type="text" formControlName="numero" class="input-retro"
+                 [ngClass]="{ 'input-error': numero?.invalid && numero?.touched }">
+          <div *ngIf="numero?.invalid && (numero?.dirty || numero?.touched)" class="error-message">
+            <span *ngIf="numero?.errors?.['required']">O número é obrigatório.</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-3">
+          <label for="cidade" class="block text-sm font-medium text-retro-white mb-2">Cidade</label>
+          <input id="cidade" type="text" formControlName="cidade" class="input-retro"
+                 [ngClass]="{ 'input-error': cidade?.invalid && cidade?.touched }">
+          <div *ngIf="cidade?.invalid && (cidade?.dirty || cidade?.touched)" class="error-message">
+            <span *ngIf="cidade?.errors?.['required']">A cidade é obrigatória.</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-1">
+          <label for="estado" class="block text-sm font-medium text-retro-white mb-2">Estado (UF)</label>
+          <input id="estado" type="text" formControlName="estado" maxlength="2" class="input-retro uppercase"
+                 [ngClass]="{ 'input-error': estado?.invalid && estado?.touched }">
+          <div *ngIf="estado?.invalid && (estado?.dirty || estado?.touched)" class="error-message">
+            <span *ngIf="estado?.errors?.['required']">O estado é obrigatório.</span>
+            <span *ngIf="estado?.errors?.['maxlength']">Use 2 letras.</span>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend class="text-2xl font-bold text-retro-yellow mb-6 border-b-2 border-retro-green pb-2">
+        3. Endereço de Entrega
+      </legend>
+      
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+        
+        <div class="md:col-span-3">
+          <label for="enderecoEntrega" class="block text-sm font-medium text-retro-white mb-2">Endereço (Rua)</label>
+          <input id="enderecoEntrega" type="text" formControlName="enderecoEntrega" class="input-retro"
+                 [ngClass]="{ 'input-error': enderecoEntrega?.invalid && enderecoEntrega?.touched }">
+          <div *ngIf="enderecoEntrega?.invalid && (enderecoEntrega?.dirty || enderecoEntrega?.touched)" class="error-message">
+            <span *ngIf="enderecoEntrega?.errors?.['required']">O endereço é obrigatório.</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-1">
+          <label for="complementoEntrega" class="block text-sm font-medium text-retro-white mb-2">Complemento</label>
+          <input id="complementoEntrega" type="text" formControlName="complementoEntrega" class="input-retro">
+          </div>
+
+        <div class="md:col-span-3">
+          <label for="cidadeEntrega" class="block text-sm font-medium text-retro-white mb-2">Cidade</label>
+          <input id="cidadeEntrega" type="text" formControlName="cidadeEntrega" class="input-retro"
+                 [ngClass]="{ 'input-error': cidadeEntrega?.invalid && cidadeEntrega?.touched }">
+          <div *ngIf="cidadeEntrega?.invalid && (cidadeEntrega?.dirty || cidadeEntrega?.touched)" class="error-message">
+            <span *ngIf="cidadeEntrega?.errors?.['required']">A cidade é obrigatória.</span>
+          </div>
+        </div>
+
+        <div class="md:col-span-1">
+          <label for="estadoEntrega" class="block text-sm font-medium text-retro-white mb-2">Estado (UF)</label>
+          <input id="estadoEntrega" type="text" formControlName="estadoEntrega" maxlength="2" class="input-retro uppercase"
+                 [ngClass]="{ 'input-error': estadoEntrega?.invalid && estadoEntrega?.touched }">
+          <div *ngIf="estadoEntrega?.invalid && (estadoEntrega?.dirty || estadoEntrega?.touched)" class="error-message">
+            <span *ngIf="estadoEntrega?.errors?.['required']">O estado é obrigatório.</span>
+            <span *ngIf="estadoEntrega?.errors?.['maxlength']">Use 2 letras.</span>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <div class="mt-10 text-right">
+      <button 
+        type="submit"
+        [disabled]="formGroup.invalid"
+        class="py-3 px-8 bg-retro-green text-gray-900 font-bold rounded-lg 
+               hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 
+               transition duration-200 uppercase tracking-wide
+               disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed"
+      >
+        Ir para Pagamento
+      </button>
+    </div>
+
+  </form>
+</div>

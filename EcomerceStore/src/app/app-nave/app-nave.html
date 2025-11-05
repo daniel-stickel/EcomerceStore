@@ -1,4 +1,4 @@
-<nav class="w-full bg-purple-500 p-4 flex justify-between">
+<!-- <nav class="w-full bg-purple-500 p-4 flex justify-between">
     <div class="text-2xl text-white font-bold">
         EcomeceStore
     </div>
@@ -8,4 +8,32 @@
     <a class="text-white p-2"  routerLink="/products">Produtos</a>
     <a class="text-white p-2">Carrinho</a>
   </div>
-</nav>
+</nav> -->
+
+<header class="border-b border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <div class="flex-shrink-0">
+        <a [routerLink]="['']" class="text-black"> MINIMAL </a>
+      </div>
+
+      <nav class="flex items-center gap-8">
+        <a [routerLink]="['forms']" class="text-gray-600 hover:text-black transition-colors">
+          Cadastro
+        </a>
+        <a [routerLink]="['products']" class="text-gray-600 hover:text-black transition-colors">
+          Produtos
+        </a>
+        <button class="relative text-gray-600 hover:text-black transition-colors">
+          <i class="las la-shopping-cart text-3xl"></i>
+
+          <span
+            class="absolute -top-1 -right-1 bg-black text-white rounded-full w-4 h-4 flex items-center justify-center text-xs"
+          >
+            {{ produtoQTD }}
+          </span>
+        </button>
+      </nav>
+    </div>
+  </div>
+</header>
