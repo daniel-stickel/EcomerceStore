@@ -6,7 +6,7 @@ import { Carrinho } from './componetnes/carrinho/carrinho';
 
 @Component({
   selector: 'app-app-nave',
-  imports: [RouterModule, Carrinho],
+  imports: [RouterModule, ],
   templateUrl: './app-nave.html',
   styleUrl: './app-nave.scss'
 })
