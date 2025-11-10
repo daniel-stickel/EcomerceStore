@@ -1,11 +1,14 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProdutoServico {
-  private produto: Array<ProdutoTipo> = [
-    {
+  private produtosSubject: BehaviorSubject<Array<ProdutoTipo>> = new BehaviorSubject<Array<ProdutoTipo>> ([]);
+    constructor() {
+      this.produtosSubject.next([
+        {
         id: 1,
         imagem: 'https://jogoveio.com.br/wp-content/uploads/2016/11/4928-super-mario-world-cover-front--418x350.jpg',
         nome: 'Super Mario Word',
@@ -53,13 +56,20 @@ export class ProdutoServico {
         descricao: "Twisted Metal é um jogo eletrônico de combate de veículos. Ele foi desenvolvido pela SingleTrac e publicado pela Sony, e lançado em 1995 para PlayStation. Vendendo cerca de 1,12 milhões de unidades, Twisted Metal foi relançado em 1998, sendo colocado na coletânea do PlayStation Greatest Hits ao lado de Twisted Metal 2, assim como todos da série.",
         preco: 69.90
     }
-  ];
+  ]);
+}
 
-  public getProduto(): Array<ProdutoTipo> {
-    return this.produto;
+  public getProdutos():  Observable<Array<ProdutoTipo>> {
+    return this.produtosSubject.asObservable();
   }
   public getProdutoId(id: number): any {
-    return this.produto.find((item: ProdutoTipo) => item.id == id);
+    const produtos = this.produtosSubject.getValue();
+    return produtos.find((item: ProdutoTipo) => item.id == id);
+  }
+
+  deleteProdutoId(id: number): any {
+    const produtos = this.produtosSubject.getValue().filter((item: ProdutoTipo) => item.id !=id);
+     this.produtosSubject.next(produtos)
   }
 }
 
@@ -71,3 +81,9 @@ export interface ProdutoTipo {
   descricao: string;
   preco: number;
 }
+
+export interface ProdutoOnCartType extends ProdutoTipo {
+  quantity?: number;
+  observations?: string;
+}
+

@@ -4,14 +4,15 @@ import { ProdutoServico, ProdutoTipo } from '../../core/servico/produto';
 
 @Component({
   selector: 'app-home',
-  imports: [ProdutoCards],
+  imports: [ProdutoCards, ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class Home {
-
-  protected produto: Array<ProdutoTipo> = [];
+  protected produtos: Array<ProdutoTipo> = [];
   constructor(private produtoServico: ProdutoServico) {
-    this.produto = this.produtoServico.getProduto();
+    this.produtoServico.getProdutos().subscribe((produtos: Array<ProdutoTipo>) => {
+    this.produtos = produtos;
+    });   
   }
 }
