@@ -4,15 +4,24 @@ import { ProdutoServico, ProdutoTipo } from '../../core/servico/produto';
 
 @Component({
   selector: 'app-home',
-  imports: [ProdutoCards, ],
+  imports: [ProdutoCards],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class Home {
+
   protected produtos: Array<ProdutoTipo> = [];
   constructor(private produtoServico: ProdutoServico) {
-    this.produtoServico.getProdutos().subscribe((produtos: Array<ProdutoTipo>) => {
-    this.produtos = produtos;
-    });   
+    this.loadData();
+
+    this.produtoServico.produtosMustBeReloaded().subscribe(() => {
+      this.loadData();
+    })
+  }
+
+  private loadData() {
+    this.produtoServico.getProduto().subscribe((produtos: Array<ProdutoTipo>) => {
+      this.produtos = produtos;
+    })
   }
 }
