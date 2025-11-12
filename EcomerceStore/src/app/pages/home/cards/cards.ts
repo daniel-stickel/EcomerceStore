@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { ProdutoServico, ProdutoTipo } from '../../../core/servico/produto';
+import { Component, Input, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ProdutoServico, ProdutoTipo } from '../../../core/servico/produto';
 
 @Component({
   selector: 'app-cards',
@@ -21,3 +21,5 @@ export class ProdutoCards {
     });
   }
 }
+
+ 

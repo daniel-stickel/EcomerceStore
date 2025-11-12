@@ -1,22 +1,36 @@
 import { Injectable } from "@angular/core";
 import { BehaviorSubject, Observable } from "rxjs";
-import { ProdutoTipo } from "./produto";
+import { ProdutoOnCartType } from "./produto";
 
 @Injectable({
     providedIn: 'root'
 })
 
 export class CarrinhoServico {
-    protected carrinhoItens = new BehaviorSubject<Array<ProdutoTipo>>([]);
+    protected carrinhoItens = new BehaviorSubject<Array<ProdutoOnCartType>>([]);
 
-    public adicionaItem(item: ProdutoTipo): void {
+    public adicionaItem(item: ProdutoOnCartType): void {
         let carrinhoItens = this.carrinhoItens.getValue();
-        carrinhoItens.push(item);
+
+        const alreadyOnCart = carrinhoItens.find(el => el.id == item.id);
+        if (alreadyOnCart) {
+            alreadyOnCart.quantidade = parseInt(`${alreadyOnCart.quantidade || 0}`) + parseInt(`${(item.quantidade || 0)}`);
+        }
+        else {
+            carrinhoItens.push(item);
+        }
         this.carrinhoItens.next(carrinhoItens);
-        console.log(carrinhoItens)
     }
 
-    public carrinhoItemsHasChanged() : Observable<Array<ProdutoTipo>> {
+    public carrinhoItemsHasChanged() : Observable<Array<ProdutoOnCartType>> {
         return this.carrinhoItens.asObservable();
+    }
+
+    removeItemID(getProdutoId: number) {
+        let produtos = this.carrinhoItens.getValue();
+        console.log(produtos);
+        produtos = produtos.filter((el) => el.id != getProdutoId);
+        console.log(produtos)
+        this.carrinhoItens.next(produtos);
     }
 }

@@ -19,11 +19,6 @@ export class ProdutoServico {
     return this.produtosMustBeReloadedSubject.asObservable();
   }
 
-  // public getProduto(): Array<ProdutoTipo> {
-  //   console.log(JSON.stringify(this.produto));
-  //   return this.produto;
-  //}
-
   public getProduto(): Observable<any> {
     return this.http.get('http://localhost:3000/produtos');
   }
@@ -55,6 +50,7 @@ export class ProdutoServico {
 }
 
 export interface ProdutoTipo {
+ 
   id: number;
   imagem: string;
   nome: string;
