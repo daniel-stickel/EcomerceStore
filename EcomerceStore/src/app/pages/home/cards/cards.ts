@@ -16,7 +16,7 @@ export class ProdutoCards {
 
   delete() {
     this.produtoServico.deleteProdutoId(this.produto.id).subscribe(() => {
-      alert('Produto excluido com sucesso');
+      alert("Produto excluido com sucesso");
       this.produtoServico.reloadProductList();
     });
   }

@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -7,9 +8,11 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class ProdutoServico {
   private produtosMustBeReloadedSubject: Subject<boolean> = new Subject();
-  private produtosSubject: BehaviorSubject<Array<ProdutoTipo>> = new BehaviorSubject<Array<ProdutoTipo>>([]);
+  private produtosSubject: BehaviorSubject<Array<ProdutoTipo>> = new BehaviorSubject<
+    Array<ProdutoTipo>
+  >([]);
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   public reloadProductList() {
     this.produtosMustBeReloadedSubject.next(true);
@@ -23,35 +26,36 @@ export class ProdutoServico {
     return this.http.get('http://localhost:3000/produtos');
   }
 
-  public getProdutoId(id: number): any {
+  public getProdutoId(id: string): any {
     return this.http.get(`http://localhost:3000/produtos/${id}`);
   }
 
-  public deleteProdutoId(id: number) {
+  public deleteProdutoId(id: string) {
     return this.http.delete(`http://localhost:3000/produtos/${id}`);
   }
 
   public addProduto(value: Partial<ProdutoTipo>) {
-    let maxId = 0;
-    const produtos = this.produtosSubject.getValue();
-    produtos.forEach((el) => {
-      if (el.id > maxId) {
-        maxId = el.id;
-      }
+    this.getProduto().subscribe((produtos) => {
+      let maxId = 0;
+      produtos.forEach((el: any) => {
+        if (parseInt(el.id) > maxId) {
+          maxId = parseInt(el.id);
+        }
+      });
+      maxId = maxId + 1;
+
+      value.id = `${maxId}`;
+      this.http.post('http://localhost:3000/produtos', value).subscribe(() => {
+        alert(' Produto Inserido');
+        this.reloadProductList();
+        this.router.navigate(['/produtos']);
+      });
     });
-
-    value.id = maxId+1;
-
-    this.http.post("http://localhost:3000/produtos", value).subscribe(() => {
-      alert(" Produto Inserido");
-      this.reloadProductList();
-    })
   }
 }
 
 export interface ProdutoTipo {
- 
-  id: number;
+  id: string;
   imagem: string;
   nome: string;
   console: string;

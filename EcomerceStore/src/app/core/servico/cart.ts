@@ -26,10 +26,10 @@ export class CarrinhoServico {
         return this.carrinhoItens.asObservable();
     }
 
-    removeItemID(getProdutoId: number) {
+    removeItemID(produtoId: string) {
         let produtos = this.carrinhoItens.getValue();
         console.log(produtos);
-        produtos = produtos.filter((el) => el.id != getProdutoId);
+        produtos = produtos.filter((el) => el.id != produtoId);
         console.log(produtos)
         this.carrinhoItens.next(produtos);
     }
