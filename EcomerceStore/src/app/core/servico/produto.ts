@@ -22,7 +22,7 @@ export class ProdutoServico {
     return this.produtosMustBeReloadedSubject.asObservable();
   }
 
-  public getProduto(): Observable<any> {
+  public getProdutos(): Observable<any> {
     return this.http.get('http://localhost:3000/produtos');
   }
 
@@ -35,7 +35,7 @@ export class ProdutoServico {
   }
 
   public addProduto(value: Partial<ProdutoTipo>) {
-    this.getProduto().subscribe((produtos) => {
+    this.getProdutos().subscribe((produtos) => {
       let maxId = 0;
       produtos.forEach((el: any) => {
         if (parseInt(el.id) > maxId) {
@@ -45,11 +45,19 @@ export class ProdutoServico {
       maxId = maxId + 1;
 
       value.id = `${maxId}`;
-      this.http.post('http://localhost:3000/produtos', value).subscribe(() => {
-        alert(' Produto Inserido');
+      this.http.post(`http://localhost:3000/produtos`, value).subscribe(() => {
+        alert('Produto Inserido');
         this.reloadProductList();
         this.router.navigate(['/produtos']);
       });
+    });
+  }
+
+  public updateProduto(value: ProdutoTipo) {
+    this.http.put(`http://localhost:3000/produtos/${value.id}`, value).subscribe(() => {
+      alert('Produto Alterado!');
+      this.reloadProductList();
+      this.router.navigate(['/produtos']);
     });
   }
 }
@@ -57,7 +65,7 @@ export class ProdutoServico {
 export interface ProdutoTipo {
   id: string;
   imagem: string;
-  nome: string;
+  nomeProduto: string;
   console: string;
   descricao: string;
   preco: number;

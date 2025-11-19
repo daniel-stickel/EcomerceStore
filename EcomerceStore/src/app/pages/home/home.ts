@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { ProdutoCards } from './cards/cards';
 import { ProdutoServico, ProdutoTipo } from '../../core/servico/produto';
+import { ProdutoCard } from './cards/cards';
 
 @Component({
   selector: 'app-home',
-  imports: [ProdutoCards],
+  imports: [ ProdutoCard],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
@@ -20,7 +20,7 @@ export class Home {
   }
 
   private loadData() {
-    this.produtoServico.getProduto().subscribe((produtos: Array<ProdutoTipo>) => {
+    this.produtoServico.getProdutos().subscribe((produtos: Array<ProdutoTipo>) => {
       this.produtos = produtos;
     })
   }

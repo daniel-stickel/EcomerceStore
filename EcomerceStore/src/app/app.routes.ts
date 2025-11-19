@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, Routes } from '@angular/router';
-import { ProdutoCards } from './pages/home/cards/cards';
+import { ProdutoCard } from './pages/home/cards/cards';
 import { Home } from './pages/home/home';
 import { Forms } from './pages/forms/forms';
 import { Novoproduto } from './pages/novoproduto/novoproduto';

@@ -1,24 +1,24 @@
 <div class="bg-gray-800 p-6 md:p-8 rounded-lg shadow-xl border border-retro-green font-retro">
-  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()" novalidate>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
     <fieldset class="mb-8">
-      <legend class="text-2xl font-bold text-retro-yellow mb-6 border-b-2 border-retro-green pb-2">
-        Cadastro de Produtos 
+      <legend class="text-2xl font-bold text-retro-white mb-6 border-b-2 border-retro-green pb-2">
+        Cadastro de Jogos 
       </legend>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="md:col-span-2">
           <label for="nomeProduto" class="block text-sm font-medium text-retro-white mb-2">Nome do Produto</label>
           <input id="nomeProduto" type="text" formControlName="nomeProduto" class="input-retro" 
-                 [ngClass]="{ 'input-error': nomeproduto?.invalid && nomeproduto?.touched }">
-          <div *ngIf="nomeproduto?.invalid && (nomeproduto?.dirty || nomeproduto?.touched)" class="error-message">
-            <span *ngIf="nomeproduto?.errors?.['required']">O nome é OBRIGATÓRIO.</span>
+                 [ngClass]="{ 'input-error': nomeProduto?.invalid && nomeProduto?.touched }">
+          <div *ngIf="nomeProduto?.invalid && (nomeProduto?.dirty || nomeProduto?.touched)" class="error-message">
+            <span *ngIf="nomeProduto?.errors?.['required']">O nome é OBRIGATÓRIO.</span>
           </div>
         </div>
 
         <div>
           <label for="Preco" class="block text-sm font-medium text-retro-white mb-2">Preço</label>
-          <input id="preco" type="text" formControlName="preco" maxlength="11" class="input-retro" 
+          <input id="preco" type="number" formControlName="preco" maxlength="11" class="input-retro" 
                  [ngClass]="{ 'input-error': preco?.invalid && preco?.touched }">
           <div *ngIf="preco?.invalid && (preco?.dirty || preco?.touched)" class="error-message">
             <span *ngIf="preco?.errors?.['required']">O Preço é OBRIGATÓRIO.</span>
@@ -27,14 +27,18 @@
       </div>
       
       <div>
-          <label for="categoria" class="block text-sm font-medium text-retro-white mb-2">Categoria</label>
-          <input id="categoria" type="text" formControlName="categoria" maxlength="11" class="input-retro" 
-                 [ngClass]="{ 'input-error': categoria?.invalid && categoria?.touched }">
-          <!-- <div *ngIf="categoria?.invalid && (categoria?.dirty || categoria?.touched)" class="error-message">
-            <span *ngIf="categoria?.errors?.['required']">A Categoria é OBRIGATÓRIO.</span>
-          </div> -->
+          <label for="categoria" class="block text-sm font-medium text-retro-white mb-2">Console</label>
+          <input id="categoria" type="text" formControlName="console" class="input-retro" 
+                 [ngClass]="{ 'input-error': console?.invalid && console?.touched }">
       </div>
-
+            <div>
+          <label for="imagem" class="block text-sm font-medium text-retro-white mb-2">Descrição do Jogo  </label>
+          <input id="imagem" type="text" formControlName="descricao"  class="input-retro" 
+                 [ngClass]="{ 'input-error': descricao?.invalid && descricao?.touched }">
+          <div *ngIf="imagem?.invalid && (imagem?.dirty || imagem?.touched)" class="error-message">
+            <span *ngIf="imagem?.errors?.['required']">O Link da Imagem é OBRIGATÓRIO.</span>
+          </div>
+      </div>
             <div>
           <label for="imagem" class="block text-sm font-medium text-retro-white mb-2">Link da Imagem  </label>
           <input id="imagem" type="text" formControlName="imagem"  class="input-retro" 
@@ -44,18 +48,20 @@
           </div>
       </div>
     </fieldset>
-
     
     <div class="mt-10 text-right">
       <button 
         type="submit"
-        [disabled]="formGroup.invalid"
+        
         class="py-3 px-8 bg-retro-green text-gray-900 font-bold rounded-lg 
                hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 
                transition duration-200 uppercase tracking-wide
                disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed"
-      >Salvar </button>
+      >@if (isUpdateMode) {
+        atualizar
+      }@else {
+      Salvar
+       } </button>
     </div>
-
   </form>
 </div>
