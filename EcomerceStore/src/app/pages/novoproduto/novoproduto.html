@@ -8,7 +8,7 @@
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="md:col-span-2">
-          <label for="nomeProduto" class="block text-sm  text-white font-medium text-retro-white mb-2">Nome do Produto</label>
+          <label for="nomeProduto" class="block text-sm text-white font-medium text-retro-white mb-2">Nome do Produto</label>
           <input id="nomeProduto" type="text" formControlName="nomeProduto" class="input-retro" 
                  [ngClass]="{ 'input-error': nomeProduto?.invalid && nomeProduto?.touched }">
           <div *ngIf="nomeProduto?.invalid && (nomeProduto?.dirty || nomeProduto?.touched)" class="error-message">

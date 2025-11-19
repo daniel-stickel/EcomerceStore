@@ -63,6 +63,14 @@
       "console": "Play Station ",
       "descricao": "Tony Hawk's Pro Skater é um jogo eletrônico de skate desenvolvido pela Neversoft e publicado pela Activision. Foi lançado em 29 de setembro de 1999 para PlayStation",
       "imagem": "https://lojaarenagames.com.br/wp-content/uploads/2023/04/Tony-Hawks-Pro-Skater-Ps1-Jogo-Mdia-Fsica-Original-Greatest-Hits-2122174024.jpg"
+    },
+    {
+      "id": "10",
+      "nomeProduto": "Runabout 2",
+      "preco": 59.9,
+      "console": "Play Station 1",
+      "descricao": "Runabout 2 é um jogo de corrida lançado para o PlayStation no Japão em 18 de novembro de 1999 e nos EUA em 19 de maio de 2000 e desenvolvido pela Graphic Research. O objetivo do jogo é dirigir do ponto A ao B em um período limitado de tempo para pegar um determinado item ou entregar um item.",
+      "imagem": "https://s.pacn.ws/1/p/d6/pa.237091.1.jpg?v=m6qa9u"
     }
   ]
 }
