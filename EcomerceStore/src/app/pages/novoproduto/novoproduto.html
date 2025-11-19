@@ -2,13 +2,13 @@
   <form [formGroup]="formGroup" (ngSubmit)="onSubmit()">
 
     <fieldset class="mb-8">
-      <legend class="text-2xl font-bold text-retro-white mb-6 border-b-2 border-retro-green pb-2">
+      <legend class="text-2xl text-white font-bold text-retro-white mb-6 border-b-2 border-retro-green pb-2">
         Cadastro de Jogos 
       </legend>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="md:col-span-2">
-          <label for="nomeProduto" class="block text-sm font-medium text-retro-white mb-2">Nome do Produto</label>
+          <label for="nomeProduto" class="block text-sm  text-white font-medium text-retro-white mb-2">Nome do Produto</label>
           <input id="nomeProduto" type="text" formControlName="nomeProduto" class="input-retro" 
                  [ngClass]="{ 'input-error': nomeProduto?.invalid && nomeProduto?.touched }">
           <div *ngIf="nomeProduto?.invalid && (nomeProduto?.dirty || nomeProduto?.touched)" class="error-message">
@@ -17,7 +17,7 @@
         </div>
 
         <div>
-          <label for="Preco" class="block text-sm font-medium text-retro-white mb-2">Preço</label>
+          <label for="Preco" class="block text-sm  text-white font-medium text-retro-white mb-2">Preço</label>
           <input id="preco" type="number" formControlName="preco" maxlength="11" class="input-retro" 
                  [ngClass]="{ 'input-error': preco?.invalid && preco?.touched }">
           <div *ngIf="preco?.invalid && (preco?.dirty || preco?.touched)" class="error-message">
@@ -27,12 +27,12 @@
       </div>
       
       <div>
-          <label for="categoria" class="block text-sm font-medium text-retro-white mb-2">Console</label>
-          <input id="categoria" type="text" formControlName="console" class="input-retro" 
+          <label for="console" class="block  text-white text-sm font-medium text-retro-white mb-2">Console</label>
+          <input id="console" type="text" formControlName="console" class="input-retro" 
                  [ngClass]="{ 'input-error': console?.invalid && console?.touched }">
       </div>
             <div>
-          <label for="imagem" class="block text-sm font-medium text-retro-white mb-2">Descrição do Jogo  </label>
+          <label for="imagem" class="block  text-white text-sm font-medium text-retro-white mb-2">Descrição do Jogo  </label>
           <input id="imagem" type="text" formControlName="descricao"  class="input-retro" 
                  [ngClass]="{ 'input-error': descricao?.invalid && descricao?.touched }">
           <div *ngIf="imagem?.invalid && (imagem?.dirty || imagem?.touched)" class="error-message">
@@ -40,7 +40,7 @@
           </div>
       </div>
             <div>
-          <label for="imagem" class="block text-sm font-medium text-retro-white mb-2">Link da Imagem  </label>
+          <label for="imagem" class="block  text-white text-sm font-medium text-retro-white mb-2">Link da Imagem  </label>
           <input id="imagem" type="text" formControlName="imagem"  class="input-retro" 
                  [ngClass]="{ 'input-error': imagem?.invalid && imagem?.touched }">
           <div *ngIf="imagem?.invalid && (imagem?.dirty || imagem?.touched)" class="error-message">
@@ -53,7 +53,7 @@
       <button 
         type="submit"
         
-        class="py-3 px-8 bg-retro-green text-gray-900 font-bold rounded-lg 
+        class="py-3 px-8 bg-retro-green  text-white text-gray-900 font-bold rounded-lg 
                hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 
                transition duration-200 uppercase tracking-wide
                disabled:bg-gray-600 disabled:text-gray-400 disabled:cursor-not-allowed"

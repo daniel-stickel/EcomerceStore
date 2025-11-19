@@ -45,19 +45,19 @@ export class Novoproduto implements OnInit {
   }
 
   get nomeProduto() {
-    return this.formGroup.get('');
+    return this.formGroup.get('nomeProduto');
   }
   get preco() {
-    return this.formGroup.get('');
+    return this.formGroup.get('preco');
   }
   get console() {
-    return this.formGroup.get('');
+    return this.formGroup.get('console');
   }
   get descricao() {
-    return this.formGroup.get('');
+    return this.formGroup.get('descricao');
   }
   get imagem() {
-    return this.formGroup.get('');
+    return this.formGroup.get('imagem');
   }
 
   onSubmit() {

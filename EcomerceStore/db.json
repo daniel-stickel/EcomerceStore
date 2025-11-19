@@ -1,12 +1,12 @@
 {
   "produtos": [
     {
-      "id": "1",
-      "imagem": "https://jogoveio.com.br/wp-content/uploads/2016/11/4928-super-mario-world-cover-front--418x350.jpg",
-      "nome": "Super Mario Word",
+      "nomeProduto": "Mario World",
+      "preco": 59.8,
       "console": "Super Nintendo",
       "descricao": "Lançado no dia 21 de novembro de 1990, no Japão, Super Mario World foi o símbolo de uma geração de ouro dos videogames. A fantástica aventura de Mario pela terra dos dinossauros, que marcou o surgimento do Super Nintendo, levou fantasia, diversão e desafio para os jogadores que se deixaram levar pela magia da Nintendo e encararam a inesquecível jornada de um encanador em busca de sua amada princesa.",
-      "preco": 59.9
+      "imagem": "https://jogoveio.com.br/wp-content/uploads/2016/11/4928-super-mario-world-cover-front--418x350.jpg",
+      "id": "1"
     },
     {
       "id": "2",

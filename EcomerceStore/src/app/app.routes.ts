@@ -4,12 +4,13 @@ import { ProdutoCard } from './pages/home/cards/cards';
 import { Home } from './pages/home/home';
 import { Forms } from './pages/forms/forms';
 import { Novoproduto } from './pages/novoproduto/novoproduto';
-
-
+import { ProdutoCarrinho } from './produto-carrinho/produto-carrinho';
 
 export const routes: Routes = [
-    { path: '', redirectTo: 'home', pathMatch: 'full'},
-    { path: 'home', component: Home },
-    { path: 'forms', component: Forms },
-    { path: 'novoproduto', component: Novoproduto}
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home/:id', component: ProdutoCarrinho },
+  { path: 'home', component: Home },
+  { path: 'novoproduto/:id', component: Novoproduto },
+  { path: 'novoproduto', component: Novoproduto },
+  { path: 'forms', component: Forms },
 ];
