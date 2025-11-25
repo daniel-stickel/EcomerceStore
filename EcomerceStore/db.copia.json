@@ -1,12 +1,12 @@
 {
   "produtos": [
     {
-      "id": "1",
-      "imagem": "https://jogoveio.com.br/wp-content/uploads/2016/11/4928-super-mario-world-cover-front--418x350.jpg",
-      "nome": "Super Mario Word",
+      "nomeProduto": "Mario World",
+      "preco": 59.80,
       "console": "Super Nintendo",
       "descricao": "Lançado no dia 21 de novembro de 1990, no Japão, Super Mario World foi o símbolo de uma geração de ouro dos videogames. A fantástica aventura de Mario pela terra dos dinossauros, que marcou o surgimento do Super Nintendo, levou fantasia, diversão e desafio para os jogadores que se deixaram levar pela magia da Nintendo e encararam a inesquecível jornada de um encanador em busca de sua amada princesa.",
-      "preco": 59.9
+      "imagem": "https://jogoveio.com.br/wp-content/uploads/2016/11/4928-super-mario-world-cover-front--418x350.jpg",
+      "id": "1"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "nomeProduto": "Donk Kong Country",
       "console": "Super Nintendo",
       "descricao": "Donkey Kong Country é um jogo de plataforma 2D que se destaca por sua jogabilidade, gráficos revolucionários para a época e trilha sonora memorável. O jogo, lançado originalmente para Super Nintendo em 1994, apresenta o protagonista Donkey Kong e seu parceiro Diddy Kong em uma aventura por nove mundos para recuperar o estoque de bananas roubado pelo vilão Rei K. Rool e seus Kremlings. A jogabilidade inclui fases com elementos de plataforma clássica, segmentos com carrinhos de mineração, barris e aliados animais, além de coletáveis como bananas, letras K-O-N-G e balõe",
-      "preco": 49.9
+      "preco": 49.90
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "nomeProduto": "Contra",
       "console": "Nintendinho, Mega Drive, Dynavision, ...",
       "descricao": "É uma série de jogos eletrônicos de plataforma (Shoot 'em up) criados pela Konami em 1987. Enquanto que os primeiros jogos da série foi lançada para arcade, a série ganhou maior popularidade devido aos lançamentos de seus jogos para consoles, especialmente os títulos criados para o Nintendo Entertainment System (NES).As fases são variadas, alternando scroll horizontal e vertical e até fases em pseudo 3D. A principio parece uma guerra normal, mas nas fases mais adiantadas o cenário vai se tornando bizarro e alienígena",
-      "preco": 39.9
+      "preco": 39.90
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "nomeProduto": "Rock in Roll Racing",
       "console": "Super Nintendo",
       "descricao": "Rock N' Roll Racing é um jogo eletrônico de corrida e de combate de veículos que possui um estilo único para um jogo de 1993. Desenvolvido pela Blizzard Entertainment (que na época se chamava Silicon & Synapse) e publicado pela Interplay, o grande forte do jogo é a trilha sonora no estilo rock n' roll, o que adiciona mais emoção às corridas, ultrapassagens e principalmente a batidas que acontecem em excesso no decorrer das fases. Outro destaque é o estilo batalha que acompanha as corridas com tiros e bombas voando para todos os lados. O game foi portado para o Game Boy Advance em 2003",
-      "preco": 49.9
+      "preco": 49.90
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "nomeProduto": "Resident Evil",
       "console": "Play Station",
       "descricao": "Resident Evil, conhecido no Japão como Biohazard, é um jogo eletrônico de survival horror lançado originalmente para Playstation. É o primeiro título da série de jogos Resident Evil. O enredo segue Chris Redfield e Jill Valentine, membros de uma força-tarefa de elite conhecida como S.T.A.R.S., enquanto investigam os arredores da cidade de Raccoon City após o desaparecimento de seus membros de equipe. Eles logo ficam presos em uma mansão infestada por zumbis e outros monstros. O jogador, tendo escolhido jogar como Chris ou Jill no início do jogo, deve explorar a mansão para descobrir seus segredos e encontrar uma maneira de escapar.",
-      "preco": 69.9
+      "preco": 69.90
     },
     {
       "id": "6",
@@ -46,12 +46,12 @@
       "nomeProduto": "Twisted Metal",
       "console": "Play Station",
       "descricao": "Twisted Metal é um jogo eletrônico de combate de veículos. Ele foi desenvolvido pela SingleTrac e publicado pela Sony, e lançado em 1995 para PlayStation. Vendendo cerca de 1,12 milhões de unidades, Twisted Metal foi relançado em 1998, sendo colocado na coletânea do PlayStation Greatest Hits ao lado de Twisted Metal 2, assim como todos da série.",
-      "preco": 69.9
+      "preco": 69.90
     },
     {
       "id": "8",
       "nomeProduto": "Mat Hofmam Pro BMX",
-      "preco": 60,
+      "preco": 60.00,
       "console": "Play Station 2",
       "descricao": "jogo de esporte radical com BMX",
       "imagem": "https://cdn.mobygames.com/covers/3985314-mat-hoffmans-pro-bmx-playstation-front-cover.jpg"
@@ -59,10 +59,18 @@
     {
       "id": "9",
       "nomeProduto": "Tony Hank ",
-      "preco": 38.8,
+      "preco": 38.80,
       "console": "Play Station ",
       "descricao": "Tony Hawk's Pro Skater é um jogo eletrônico de skate desenvolvido pela Neversoft e publicado pela Activision. Foi lançado em 29 de setembro de 1999 para PlayStation",
       "imagem": "https://lojaarenagames.com.br/wp-content/uploads/2023/04/Tony-Hawks-Pro-Skater-Ps1-Jogo-Mdia-Fsica-Original-Greatest-Hits-2122174024.jpg"
+    },
+    {
+      "id": "10",
+      "nomeProduto": "Runabout 2",
+      "preco": 59.90,
+      "console": "Play Station 1",
+      "descricao": "Runabout 2 é um jogo de corrida lançado para o PlayStation no Japão em 18 de novembro de 1999 e nos EUA em 19 de maio de 2000 e desenvolvido pela Graphic Research. O objetivo do jogo é dirigir do ponto A ao B em um período limitado de tempo para pegar um determinado item ou entregar um item.",
+      "imagem": "https://s.pacn.ws/1/p/d6/pa.237091.1.jpg?v=m6qa9u"
     }
   ]
 }
