@@ -17,7 +17,7 @@
         </div>
 
         <div>
-          <label for="cpf" class="block text-sm  text-white font-medium text-retro-white mb-2">CPF (só números)</label>
+          <label for="cpf" class="block text-sm  text-white font-medium text-retro-white mb-2">CPF (apenas números)</label>
           <input id="cpf" type="text" formControlName="cpf" maxlength="11" class="input-retro" 
                  [ngClass]="{ 'input-error': cpf?.invalid && cpf?.touched }">
           <div *ngIf="cpf?.invalid && (cpf?.dirty || cpf?.touched)" class="error-message">
@@ -75,7 +75,7 @@
 
         <div class="md:col-span-1">
           <label for="numero" class="block  text-white text-sm font-medium text-retro-white mb-2">Número</label>
-          <input id="numero" type="text" formControlName="numero" class="input-retro"
+          <input id="numero" type="number" formControlName="numero" class="input-retro"
                  [ngClass]="{ 'input-error': numero?.invalid && numero?.touched }">
           <div *ngIf="numero?.invalid && (numero?.dirty || numero?.touched)" class="error-message">
             <span *ngIf="numero?.errors?.['required']">O número é obrigatório.</span>

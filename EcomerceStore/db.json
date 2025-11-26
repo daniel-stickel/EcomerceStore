@@ -25,12 +25,12 @@
       "preco": 49.9
     },
     {
-      "id": "5",
-      "imagem": "https://m.media-amazon.com/images/I/817WQVAXeXL._AC_SL1500_.jpg",
-      "nomeProduto": "Resident Evil",
+      "nomeProduto": "Resident Evil915289289",
+      "preco": 69.9,
       "console": "Play Station",
       "descricao": "Resident Evil, conhecido no Japão como Biohazard, é um jogo eletrônico de survival horror lançado originalmente para Playstation. É o primeiro título da série de jogos Resident Evil. O enredo segue Chris Redfield e Jill Valentine, membros de uma força-tarefa de elite conhecida como S.T.A.R.S., enquanto investigam os arredores da cidade de Raccoon City após o desaparecimento de seus membros de equipe. Eles logo ficam presos em uma mansão infestada por zumbis e outros monstros. O jogador, tendo escolhido jogar como Chris ou Jill no início do jogo, deve explorar a mansão para descobrir seus segredos e encontrar uma maneira de escapar.",
-      "preco": 69.9
+      "imagem": "https://m.media-amazon.com/images/I/817WQVAXeXL._AC_SL1500_.jpg",
+      "id": "5"
     },
     {
       "id": "6",

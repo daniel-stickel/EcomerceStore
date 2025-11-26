@@ -1,10 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { ProdutoServico, ProdutoTipo } from '../../core/servico/produto';
 import { ProdutoCard } from './cards/cards';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [ ProdutoCard],
+  imports: [ ProdutoCard ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
@@ -24,4 +25,6 @@ export class Home {
       this.produtos = produtos;
     })
   }
+
+currentYear: number = new Date().getFullYear();
 }

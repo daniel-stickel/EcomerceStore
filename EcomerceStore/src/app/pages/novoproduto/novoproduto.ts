@@ -32,7 +32,7 @@ export class Novoproduto implements OnInit {
 
     this.produtoId = this.route.snapshot.paramMap.get('id') || '';
 
-    this.initUptate();
+        this.initUptate();
   }
 
   private initUptate() {
@@ -43,6 +43,7 @@ export class Novoproduto implements OnInit {
       });
     }
   }
+  
 
   get nomeProduto() {
     return this.formGroup.get('nomeProduto');
@@ -74,72 +75,7 @@ export class Novoproduto implements OnInit {
     } else {
       this.produtoServico.addProduto(value);
     }
+    
   }
 }
 
-// export class Novoproduto implements OnInit {
-//   protected formGroup!: FormGroup;
-//   private produtoId!: string;
-//   protected isUpdateMode: boolean = false;
-
-//   constructor(
-//     private formBuilder: FormBuilder,
-//     private produtoServico: ProdutoServico,
-//     private router: Router,
-//     private route: ActivatedRoute
-//   ) {}
-
-//   ngOnInit(): void {
-//     this.formGroup = this.formBuilder.group({
-//       nomeProduto: ['', Validators.required],
-//       preco: ['', Validators.required],
-//       console: ['', Validators.required],
-//       descricao: ['', Validators.required],
-//       imagem: ['', Validators.required],
-//     });
-
-//     this.produtoId = this.route.snapshot.paramMap.get('id') || '';
-
-//     this.initUpdate();
-//   }
-
-//   private initUpdate() {
-//     if (this.produtoId) {
-//       this.produtoServico.getProdutoId(this.produtoId).subscribe((produto: any) => {
-//         this.isUpdateMode = true;
-//         this.formGroup.patchValue(produto);
-//       });
-//     }
-//   }
-
-//   get nomeproduto() {
-//     return this.formGroup.get('');
-//   }
-//   get preco() {
-//     return this.formGroup.get('');
-//   }
-//   get console() {
-//     return this.formGroup.get('');
-//   }
-//   get descricao() {
-//     return this .formGroup.get('');
-//   }
-//   get imagem() {
-//     return this.formGroup.get('');
-//   }
-
-//   onSubmit() {
-//     const value = this.formGroup.value;
-
-//     if (!this.formGroup.valid) {
-//       alert('Preencha os campos em vermelho!');
-//       return;
-//     }
-//     if (this.isUpdateMode) {
-//       value.id = this.produtoId;
-//       this.produtoServico.updateProduto(value);
-//     } else {
-//       this.produtoServico.addProduto(value);
-//     }
-//   }
-// }

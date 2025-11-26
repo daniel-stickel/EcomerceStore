@@ -10,7 +10,7 @@ export const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'produto-carrinho/:id', component: ProdutoCarrinho },
   { path: 'home', component: Home },
-  { path: 'novoproduto/:id', component: Novoproduto },
   { path: 'novoproduto', component: Novoproduto },
+  { path: 'novoproduto/:id', component: Novoproduto },
   { path: 'forms', component: Forms },
 ];

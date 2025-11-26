@@ -25,16 +25,14 @@ export class ProdutoCarrinho implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // 1. Inicializa o formulário de quantidade
     this.formGroup = this.formBuilder.group({
       quantidade: [1, [Validators.required, Validators.min(1)]],
       observacao: [''], 
+      
     });
 
-    // 2. Obtém o ID da rota
     this.produtoId = this.route.snapshot.paramMap.get('id') || '';
 
-    // 3. Carrega os dados do produto
     if (this.produtoId) {
       this.produtoServico.getProdutoId(this.produtoId).subscribe((produto: ProdutoTipo) => {
         this.produto = produto;
@@ -61,9 +59,11 @@ export class ProdutoCarrinho implements OnInit {
     };
     
     this.carrinhoServico.adicionaItem(itemCarrinho);
-    alert(`${itemCarrinho.quantidade}x ${this.produto.nomeProduto} adicionado ao carrinho com sucesso!`);
+    alert(`${itemCarrinho.quantidade} ${this.produto.nomeProduto} adicionado ao carrinho com sucesso!`);
     
     // Volta a quantidade para 1 após adicionar
     this.formGroup.get('quantidade')?.setValue(1);
   }
+
+ 
 }

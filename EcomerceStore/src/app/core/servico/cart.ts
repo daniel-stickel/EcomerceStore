@@ -8,6 +8,7 @@ import { ProdutoOnCartType } from "./produto";
 
 export class CarrinhoServico {
     protected carrinhoItens = new BehaviorSubject<Array<ProdutoOnCartType>>([]);
+    
 
     public adicionaItem(item: ProdutoOnCartType): void {
         let carrinhoItens = this.carrinhoItens.getValue();

@@ -8,10 +8,8 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class ProdutoServico {
   private produtosMustBeReloadedSubject: Subject<boolean> = new Subject();
-  private produtosSubject: BehaviorSubject<Array<ProdutoTipo>> = new BehaviorSubject<
-    Array<ProdutoTipo>
-  >([]);
-
+  private produtosSubject: BehaviorSubject<Array<ProdutoTipo>> = new BehaviorSubject<Array<ProdutoTipo>>([]);
+  
   constructor(private http: HttpClient, private router: Router) {}
 
   public reloadProductList() {
