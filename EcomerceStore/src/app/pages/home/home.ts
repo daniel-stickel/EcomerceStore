@@ -25,9 +25,14 @@ export class Home {
       this.produtos = produtos;
     })
   }
+<<<<<<< HEAD
   // ... dentro da sua classe App {...}
 
 currentYear: number = new Date().getFullYear();
 
 // ...
+=======
+
+currentYear: number = new Date().getFullYear();
+>>>>>>> ba1475413c443491c2534afbb7c952093de78e8d
 }
